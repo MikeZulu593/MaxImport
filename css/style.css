@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+main img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+.carousel-item {
+    transition: transform 1s ease; 
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #0c4f8b
+}
+
+hr {
+    color: #008080
+}
+
+
+.navbar-color {
+    background-color: #6192ed
+}
+
+
+.navbar-color .nav-link {
+    color: #ffffff !important;
+}
+
+
+.btn-custom {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+
+.btn-custom:hover {
+    background-color: #fd7e14;
+    color: #ffffff;
+}
+
+
+.material-symbols-outlined {
+    color: #ce6200;
+    font-size: 200px;
+}
+
+/*TAMAÑO DE LOS ICONS*/
+.custom-icon-size {
+    display: inline-block;
+    font-size: 200px;
+    line-height: 1.1;
+}
+
+
+.material-symbols-outlined h5 {
+    color: #ce6200;
+}
+
+
+.fondo-tiendas {
+    background-color: #78caab;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+/*FONDO AMARLLO IMAGEN CARGA LIVIANA*/
+.liviana {
+    background-color: #f2e18b;
+    padding: 10px;
+}
+
+.formulario-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.imagen-derecha {
+    max-width: 650px;
+}
+
+
+footer {
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210115/pngtree-vector-dark-blue-geometric-cascading-background-image_520707.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 10vh;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.copyright{
+    text-align: center;
+    font-size: 12px;
+}
+
+.copyright p {
+    color: #ffffff;
+    text-align: center;
+}
+
+
+p {
+    text-align: justify;
+    font-size: 17px;
+}
+
+/*///////////////////////////////// O T R A S    P A G I N A S /////////////////////////////////////*/
+
+
+.titulo-inicial {
+    text-align: center;
+    background-color: #0c4f8b;
+    color: white;
+    padding: 50px;
+}
+
+.siguenos{
+    text-align: center;
+    background-color: #0c4f8b;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+
+body.nosotros main {
+    display: flex;
+}
+
+body.nosotros .columna-izquierda,
+body.nosotros .columna-derecha {
+    flex: 1;
+    padding: 30px;
+}
+
+
+.elegirnos {
+    list-style: none;
+    padding: 0;
+    text-align: justify;
+}
+
+.elegirnos li {
+    margin-bottom: 30px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+
+.card{
+    background-color: antiquewhite;
+}
+
+
+.accordion-item{
+    background-color: antiquewhite;
+}
+
+
