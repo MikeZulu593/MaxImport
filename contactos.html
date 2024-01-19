@@ -21,6 +21,14 @@
     <!-- LINK CDN FONTAWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+
+    <!--OTROS LINKS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyD4rW6l/8i6UqEHE5nWepUJ1WQFaBiA/D"
+        crossorigin="anonymous"></script>
 </head>
 
 <body class="contactos">
@@ -39,22 +47,28 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
+
+
+
+                        <li class="nav-item" id="inicioNavItem" class="position-relative">
                             <a class="nav-link active" aria-current="page" href="index.html">Inicio <i
                                     class="fas fa-home"></i></a>
                         </li>
-                        <li class="nav-item">
+
+
+                        <li class="nav-item expandible">
                             <a class="nav-link" href="nosotros.html">Nosotros <i class="fas fa-users"></i></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item expandible">
                             <a class="nav-link" href="productos.html">Productos <i class="fas fa-tag"></i></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item expandible">
                             <a class="nav-link" href="contactos.html">Contáctenos <i class="fas fa-envelope"></i></a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="Búsqueda">
-                        <input class="form-control me-2" type="search" placeholder="Busca artículos, boletines..."
+                    <!---CUADRO DE BUSQUEDA-->
+                    <form class="d-flex" role="Búsqueda" onsubmit="palabraClave(); return false;">
+                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Palabra Clave"
                             aria-label="Search">
                         <button class="btn btn-outline-success btn-custom" type="submit">Buscar</button>
                     </form>
@@ -66,262 +80,280 @@
         <br>
 
     </header>
+
+    <main>
+
+        <article>
+            <h2><strong>Tienes Dudas?</strong></h2>
+            <p>Llena los campos a continuación y te atenderemos lo más pronto posible.</p>
+
+            <!--FORMULARIO DE CONTACTO-->
+            <div class="formulario-container">
+                <form id="contactForm">
+                    <input type="text" placeholder="Nombre completo " id="nombre" required> <br><br>
+                    <input type="email" placeholder="e-mail" id="email" required> <br><br>
+                    <label for="opciones">Área:</label>
+                    <select id="opciones" name="opciones" required>
+                        <option value="seleccione">Seleccione</option>
+                        <option value="cliente">Servicio al cliente</option>
+                        <option value="compras">Compras</option>
+                    </select><br><br>
+                    <input type="text" placeholder="Asunto" id="asunto"> <br><br>
+                    <textarea placeholder="Mensaje" id="mensaje" name="mensaje" rows="4" cols="50"></textarea> <br>
+                    <br><label>
+                        <input type="checkbox" name="politica_privacidad" required>
+                        He leído y acepto la política de protección de datos personales
+                    </label><br><br>
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                    <p id="mensajeResultado"></p>
+                    <br><br>
+                </form>
+
+
+
+                <hr><br>
+
+
+                <!--IMAGEN AL LADO DERECHO-->
+                <img src="assets/camiones-formulario.png" alt="Imagen" class="imagen-derecha" width="450">
+        </article>
+        </div>
+
+        <hr><br>
+
+        <h2><strong>Preguntas Frecuentes</strong></h2><br>
+
+        <!------------FLUSH CON PREGUNTAS------------>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Qué servicios ofrecen?
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Entre nuestros servicios principales se incluyen la gestión aduanal
+                        eficiente, transporte seguro y oportuno, así como asesoría en materia logística. Además, nos
+                        especializamos en la distribución nacional e internacional, asegurando que los productos lleguen
+                        a
+                        su destino de manera rápida y confiable.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        En cuánto tiempo recibiré mi paquete?
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">En MaxImport, entendemos la importancia de la puntualidad en la entrega
+                        de
+                        envíos. Nuestra dedicación a la eficiencia logística nos permite ofrecer tiempos de entrega
+                        rápidos
+                        y confiables. El plazo exacto puede variar según diversos factores, como la ubicación del
+                        destino,
+                        los requisitos aduaneros y la modalidad de transporte seleccionada.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Dónde están ubicados?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">MaxImport tiene su matriz ubicada en la intersección de Av. Río Amazonas
+                        N39-185 y
+                        Gaspar de Villarroel, Edificio Jiménez, Quito. Esta ubicación estratégica nos permite gestionar
+                        eficientemente nuestras operaciones de importación y ofrecer servicios logísticos de alta
+                        calidad.
+                        Además de nuestra sede principal, contamos con sucursales estratégicamente ubicadas para brindar
+                        cobertura y servicio a lo largo del país. Nuestra red de sucursales nos permite facilitar el
+                        acceso
+                        a nuestros servicios y estar más cerca de nuestros clientes, asegurando una atención cercana y
+                        eficaz.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Existe algún reembolso en caso de pérdida?
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Ofrecemos a nuestros clientes la opción de asegurar sus paquetes para
+                        brindar una capa adicional de tranquilidad y garantizar la compensación en caso de pérdida.
+
+                        Si decides asegurar tu envío y, lamentablemente, ocurre la pérdida del paquete durante el
+                        proceso de
+                        transporte, te ofrecemos un reembolso acorde al valor declarado y asegurado. Este servicio
+                        adicional
+                        te proporciona la confianza de saber que tu inversión está protegida en situaciones imprevistas.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        Brindan servicios de seguridad extra?
+                    </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p>En efecto, ofrecemos servicios de seguridad adicionales para brindarte tranquilidad y
+                            protección
+                            en cada envío. <br><br>
+
+                            Nuestro compromiso va más allá de la simple gestión de mercancías; nos esforzamos por
+                            salvaguardar tus productos durante todo el trayecto. Contamos con medidas de seguridad
+                            avanzadas, desde el almacenamiento en nuestras instalaciones hasta el transporte y la
+                            entrega
+                            final. <br><br>
+
+                            Además, ofrecemos opciones personalizadas para envíos sensibles o de alto valor, que
+                            incluyen
+                            seguimiento en tiempo real, escoltas de seguridad y protocolos especiales de manipulación.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <br>
+
+        <h2><strong>Encuentre su Sucursal más Cercana</strong></h2>
+        <p>Utilice los mapas a continuación para encontrar la sucursal más cercana a usted. Siéntase libre de visitarnos
+            y descubrir la amplia gama servicios que ofrecemos en cada una de nuestras ubicaciones. <br>Recuerde que
+            estos son solo algunos de nuestros locales principales ubicados dentro de las urbes más importantes.</p>
+        <div class="container mt-4">
+            <div class="row">
+
+                <!-- PRIMER MAPA -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow carta-producto">
+                        <div class="card-body">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1370.431479461527!2d-78.13622388250893!3d0.34530643696327096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2a3cea5afb6ee7%3A0x573cb10a4244da19!2sLa%20Plaza%20Shopping%20Center!5e0!3m2!1ses-419!2sec!4v1705005664708!5m2!1ses-419!2sec"
+                                width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                            <div>
+                                <h5><strong>Sucursal Ibarra:</strong></h5>
+                                <p>Av. Mariano Acosta 2-21 y Víctor Gómez Jurado, La Plaza Shopping Center, local 11.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEGUNDO MAPA -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow carta-producto">
+                        <div class="card-body">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.574153581117!2d-80.4657116508737!3d-1.0500472000000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902bf2af1693be87%3A0x136751d8b04aa126!2sMultiplaza%20Portoviejo!5e0!3m2!1ses-419!2sec!4v1704941185157!5m2!1ses-419!2sec"
+                                width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                            <div>
+                                <h5><strong>Sucursal Portoviejo:</strong></h5>
+                                <p>Av. Manabí S/N y Cinco de Junio, Centro Comercial Multiplaza local 87.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TERCER MAPA -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow carta-producto">
+                        <div class="card-body">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1993.4770730075832!2d-79.90184146512777!3d-2.1711347479470353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6deb2161e769%3A0x4ee2b57f093dead6!2sC.C.%20Policentro!5e0!3m2!1ses-419!2sec!4v1704941486459!5m2!1ses-419!2sec"
+                                width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                            <div>
+                                <h5><strong>Sucursal Guayaquil:</strong></h5>
+                                <p>Av. Periodista y Juan Bautista Kennedy, Centro Comercial Policentro local 312.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CUARTO MAPA -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow carta-producto">
+                        <div class="card-body">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498.0931000949555!2d-78.98721198807152!3d-2.8897599832210794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd182f69eacd69%3A0xdd4f5ca5e9005fa7!2sAeropuerto%20Mariscal%20La%20Mar!5e0!3m2!1ses-419!2sec!4v1704941688402!5m2!1ses-419!2sec"
+                                width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                            <div>
+                                <h5><strong>Sucursal Cuenca:</strong></h5>
+                                <p>Av. España y Elia Liut, Aeropuerto Mariscal Lamar, terminal de carga nacional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QUINTO MAPA -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow carta-producto">
+                        <div class="card-body">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1330.3543864568728!2d-78.12529124553544!3d-2.316179511626279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d20f4487713321%3A0x5ccd4d6ea9edb0ad!2sTerminal%20Terrestre%20Dr.%20Roberto%20Villarreal%20V.!5e0!3m2!1ses-419!2sec!4v1705004994141!5m2!1ses-419!2sec"
+                                width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                            <div>
+                                <h5><strong>Sucursal Macas:</strong></h5>
+                                <p>Av. Luis Felipe Jaramillo, Terminal Terrestre Dr. Roberto Villareal V.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEXTO MAPA -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow carta-producto">
+                        <div class="card-body">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1087.6403671024734!2d-90.31609407703189!3d-0.7435306284779929!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9aaa5d462e96d281%3A0x546767e7031d9952!2sServipronto!5e0!3m2!1ses-419!2sec!4v1705005749941!5m2!1ses-419!2sec"
+                                width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                            <div>
+                                <h5><strong>Sucursal Galápagos:</strong></h5>
+                                <p>Isla Santa Cruz Av. Baltra y 18 de febrero, junto a Servipronto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h6 class="siguenos">Síguenos en nuestras redes sociales como @MaxImportEc <i class="fab fa-facebook"
+                style="font-size: 30px; margin-right: 10px; margin-left: 10px;"></i> <i class="fab fa-twitter"
+                style="font-size: 30px; margin-right: 10px;"></i> <i class="fab fa-youtube"
+                style="font-size: 30px; margin-right: 10px;"></i> <i class="fab fa-instagram"
+                style="font-size: 30px; margin-right: 10px;"></i> <i class="fab fa-tiktok"
+                style="font-size: 30px; margin-right: 10px;"></i> </h6>
+        <h3><strong>Contacto</strong></h3>
+        <p>Matriz: Av. Río Amazonas N39-185 y Gaspar de Villarroel Ed. Jiménez, Quito.</p>
+        <p>PBX: 1800 MAXIMP</p>
+        <p>Email: ventas@maximport.com.ec</p>
+        <p class="copyright">&copy; 2024 MaxImport. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+
 </body>
-<main>
 
-    <article>
-        <h2><strong>Tienes Dudas?</strong></h2>
-        <p>Llena los campos a continuación y te atenderemos lo más pronto posible.</p>
-
-        <!--FORMULARIO DE CONTACTO-->
-        <div class="formulario-container">
-            <form action="">
-                <input type="text" placeholder="Nombre completo " id="nombre"> <br><br>
-                <input type="email" placeholder="e-mail" id="email"> <br><br>
-                <label for="opciones">Área:</label>
-                <select id="opciones" name="opciones">
-                    <option value="seleccione">Seleccione</option>
-                    <option value="cliente">Servicio al cliente</option>
-                    <option value="compras">Compras</option>
-                </select><br><br>
-                <input type="text" placeholder="Asunto" id="asunto"> <br><br>
-                <textarea placeholder="Mensaje" id="mensaje" rows="4" cols="50"></textarea> <br>
-
-                <br><label>
-                    <input type="checkbox" name="politica_privacidad" required>
-                    He leído y acepto la política de protección de datos personales
-                </label><br><br>
-
-                <button type="button" class="btn btn-success">Enviar</button>
-
-
-
-
-                <br><br><br>
-            </form>
-            <hr><br>
-
-
-            <!--IMAGEN AL LADO DERECHO-->
-            <img src="assets/camiones-formulario.png" alt="Imagen" class="imagen-derecha" width="450">
-    </article>
-    </div>
-
-    <hr><br>
-
-    <h2><strong>Preguntas Frecuentes</strong></h2><br>
-
-    <!------------FLUSH CON PREGUNTAS------------>
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Qué servicios ofrecen?
-                </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Entre nuestros servicios principales se incluyen la gestión aduanal
-                    eficiente, transporte seguro y oportuno, así como asesoría en materia logística. Además, nos
-                    especializamos en la distribución nacional e internacional, asegurando que los productos lleguen a
-                    su destino de manera rápida y confiable.</div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    En cuánto tiempo recibiré mi paquete?
-                </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">En MaxImport, entendemos la importancia de la puntualidad en la entrega de
-                    envíos. Nuestra dedicación a la eficiencia logística nos permite ofrecer tiempos de entrega rápidos
-                    y confiables. El plazo exacto puede variar según diversos factores, como la ubicación del destino,
-                    los requisitos aduaneros y la modalidad de transporte seleccionada.</div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Dónde están ubicados?
-                </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">MaxImport tiene su matriz ubicada en la intersección de Av. Río Amazonas
-                    N39-185 y
-                    Gaspar de Villarroel, Edificio Jiménez, Quito. Esta ubicación estratégica nos permite gestionar
-                    eficientemente nuestras operaciones de importación y ofrecer servicios logísticos de alta calidad.
-                    Además de nuestra sede principal, contamos con sucursales estratégicamente ubicadas para brindar
-                    cobertura y servicio a lo largo del país. Nuestra red de sucursales nos permite facilitar el acceso
-                    a nuestros servicios y estar más cerca de nuestros clientes, asegurando una atención cercana y
-                    eficaz.</div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                    Existe algún reembolso en caso de pérdida?
-                </button>
-            </h2>
-            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Ofrecemos a nuestros clientes la opción de asegurar sus paquetes para
-                    brindar una capa adicional de tranquilidad y garantizar la compensación en caso de pérdida.
-
-                    Si decides asegurar tu envío y, lamentablemente, ocurre la pérdida del paquete durante el proceso de
-                    transporte, te ofrecemos un reembolso acorde al valor declarado y asegurado. Este servicio adicional
-                    te proporciona la confianza de saber que tu inversión está protegida en situaciones imprevistas.
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                    Brindan servicios de seguridad extra?
-                </button>
-            </h2>
-            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                    <p>En efecto, ofrecemos servicios de seguridad adicionales para brindarte tranquilidad y protección
-                        en cada envío. <br><br>
-
-                        Nuestro compromiso va más allá de la simple gestión de mercancías; nos esforzamos por
-                        salvaguardar tus productos durante todo el trayecto. Contamos con medidas de seguridad
-                        avanzadas, desde el almacenamiento en nuestras instalaciones hasta el transporte y la entrega
-                        final. <br><br>
-
-                        Además, ofrecemos opciones personalizadas para envíos sensibles o de alto valor, que incluyen
-                        seguimiento en tiempo real, escoltas de seguridad y protocolos especiales de manipulación. </p>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <br><br>
-    <br>
-
-    <h2><strong>Encuentre su Sucursal más Cercana</strong></h2>
-    <p>Utilice los mapas a continuación para encontrar la sucursal más cercana a usted. Siéntase libre de visitarnos
-        y descubrir la amplia gama servicios que ofrecemos en cada una de nuestras ubicaciones. <br>Recuerde que
-        estos son solo algunos de nuestros locales principales ubicados dentro de las urbes más importantes.</p>
-    <div class="container mt-4">
-        <div class="row">
-
-            <!-- PRIMER MAPA -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1370.431479461527!2d-78.13622388250893!3d0.34530643696327096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2a3cea5afb6ee7%3A0x573cb10a4244da19!2sLa%20Plaza%20Shopping%20Center!5e0!3m2!1ses-419!2sec!4v1705005664708!5m2!1ses-419!2sec"
-                            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe><br>
-                        <div>
-                            <h5><strong>Sucursal Ibarra:</strong></h5>
-                            <p>Av. Mariano Acosta 2-21 y Víctor Gómez Jurado, La Plaza Shopping Center, local 11.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SEGUNDO MAPA -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.574153581117!2d-80.4657116508737!3d-1.0500472000000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902bf2af1693be87%3A0x136751d8b04aa126!2sMultiplaza%20Portoviejo!5e0!3m2!1ses-419!2sec!4v1704941185157!5m2!1ses-419!2sec"
-                            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe><br>
-                        <div>
-                            <h5><strong>Sucursal Portoviejo:</strong></h5>
-                            <p>Av. Manabí S/N y Cinco de Junio, Centro Comercial Multiplaza local 87.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TERCER MAPA -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1993.4770730075832!2d-79.90184146512777!3d-2.1711347479470353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6deb2161e769%3A0x4ee2b57f093dead6!2sC.C.%20Policentro!5e0!3m2!1ses-419!2sec!4v1704941486459!5m2!1ses-419!2sec"
-                            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe><br>
-                        <div>
-                            <h5><strong>Sucursal Guayaquil:</strong></h5>
-                            <p>Av. Periodista y Juan Bautista Kennedy, Centro Comercial Policentro local 312.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CUARTO MAPA -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498.0931000949555!2d-78.98721198807152!3d-2.8897599832210794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd182f69eacd69%3A0xdd4f5ca5e9005fa7!2sAeropuerto%20Mariscal%20La%20Mar!5e0!3m2!1ses-419!2sec!4v1704941688402!5m2!1ses-419!2sec"
-                            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe><br>
-                        <div>
-                            <h5><strong>Sucursal Cuenca:</strong></h5>
-                            <p>Av. España y Elia Liut, Aeropuerto Mariscal Lamar, terminal de carga nacional.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- QUINTO MAPA -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1330.3543864568728!2d-78.12529124553544!3d-2.316179511626279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d20f4487713321%3A0x5ccd4d6ea9edb0ad!2sTerminal%20Terrestre%20Dr.%20Roberto%20Villarreal%20V.!5e0!3m2!1ses-419!2sec!4v1705004994141!5m2!1ses-419!2sec"
-                            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe><br>
-                        <div>
-                            <h5><strong>Sucursal Macas:</strong></h5>
-                            <p>Av. Luis Felipe Jaramillo, Terminal Terrestre Dr. Roberto Villareal V.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SEXTO MAPA -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1087.6403671024734!2d-90.31609407703189!3d-0.7435306284779929!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9aaa5d462e96d281%3A0x546767e7031d9952!2sServipronto!5e0!3m2!1ses-419!2sec!4v1705005749941!5m2!1ses-419!2sec"
-                            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe><br>
-                        <div>
-                            <h5><strong>Sucursal Galápagos:</strong></h5>
-                            <p>Isla Santa Cruz Av. Baltra y 18 de febrero, junto a Servipronto.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-
-<footer>
-    <h6 class="siguenos">Síguenos en nuestras redes sociales como @MaxImportEc <i class="fab fa-facebook"
-            style="font-size: 30px; margin-right: 10px; margin-left: 10px;"></i> <i class="fab fa-twitter"
-            style="font-size: 30px; margin-right: 10px;"></i> <i class="fab fa-youtube"
-            style="font-size: 30px; margin-right: 10px;"></i> <i class="fab fa-instagram"
-            style="font-size: 30px; margin-right: 10px;"></i> <i class="fab fa-tiktok"
-            style="font-size: 30px; margin-right: 10px;"></i> </h6>
-    <h3><strong>Contacto</strong></h3>
-    <p>Matriz: Av. Río Amazonas N39-185 y Gaspar de Villarroel Ed. Jiménez, Quito.</p>
-    <p>PBX: 1800 MAXIMP</p>
-    <p>Email: ventas@maximport.com.ec</p>
-    <p class="copyright">&copy; 2024 MaxImport. Todos los derechos reservados.</p>
-</footer>
 
 </html>

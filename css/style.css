@@ -13,11 +13,47 @@ main img {
 }
 
 
+/*CAMBIO DE COLOR DE PAGINAS DEL NAV*/
+.navbar-nav .nav-item:hover .nav-link {
+    background-color: #0c4f8b;
+    border-radius: 40px;
+}
 
+/*SUB MENÚ DENTRO DE LA ETIQUETA DE INICIO*/
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    z-index: 100;
+    width: 300px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+
+.submenu a {
+    color: #333333;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    background-color: #a6c0f0;
+}
+
+/*///////////////////////////////////////*/
 
 .carousel-item {
-    transition: transform 1s ease; 
+    transition: transform 1s ease;
 }
+
+#carouselExampleIndicators {
+    z-index: 1;
+}
+
 
 .material-symbols-outlined {
     font-variation-settings:
@@ -115,7 +151,7 @@ footer {
     color: #ffffff;
 }
 
-.copyright{
+.copyright {
     text-align: center;
     font-size: 12px;
 }
@@ -131,6 +167,29 @@ p {
     font-size: 17px;
 }
 
+
+/*BOTON VOLVER ARRIBA*/
+#btnVolverArriba {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+#btnVolverArriba:hover {
+    background-color: #d26619;
+}
+
 /*///////////////////////////////// O T R A S    P A G I N A S /////////////////////////////////////*/
 
 
@@ -141,7 +200,7 @@ p {
     padding: 50px;
 }
 
-.siguenos{
+.siguenos {
     text-align: center;
     background-color: #0c4f8b;
     color: white;
@@ -182,13 +241,43 @@ body.nosotros .columna-derecha {
 }
 
 
-.card{
+.card {
     background-color: antiquewhite;
 }
 
 
-.accordion-item{
+.accordion-item {
     background-color: antiquewhite;
 }
 
 
+/*CARTA PRODUCTO Y MAPAS*/
+.carta-producto {
+    transition: transform .2s;
+}
+
+.carta-producto:hover {
+    transform: scale(1.1);
+    background-color: #a6c0f0;
+}
+
+
+/*NAVBAR AGRANDAR*/
+.expandible {
+    transition: transform .2s;
+}
+
+.expandible:hover {
+    transform: scale(1.1);
+}
+
+
+/*ANIMACION PARA DESPLEGAR EL FLUSH*/
+.accordion-collapse {
+    transition: height 0.3s ease;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}

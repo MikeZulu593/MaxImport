@@ -7,6 +7,7 @@
     <title>MaxImport</title>
 
     <!-- CONEXIÓN CON BOOTSTRAP -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
@@ -37,21 +38,36 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Inicio <i class="fas fa-home"></i></a>
+
+
+                        <!-- MENU DESPLEGABLE DENTRO DE INICIO -->
+                        <li class="nav-item inicio" id="inicioNavItem" class="position-relative">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio <i
+                                    class="fas fa-home"></i></a>
+
+                            <ul id="submenuInicio" class="navbar-nav me-auto mb-2 mb-lg-0 submenu">
+                                <li><a href="#fortalezas">Conoce Nuestras Fortalezas</a></li>
+                                <li><a href="#logistica">Logística Nacional</a></li>
+                                <li><a href="#paqueteria-liviana">Paquetería Liviana</a></li>
+                                <li><a href="#tiendas">Compre Online</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
+
+
+                        <li class="nav-item expandible">
                             <a class="nav-link" href="nosotros.html">Nosotros <i class="fas fa-users"></i></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item expandible">
                             <a class="nav-link" href="productos.html">Productos <i class="fas fa-tag"></i></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item expandible">
                             <a class="nav-link" href="contactos.html">Contáctenos <i class="fas fa-envelope"></i></a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="Búsqueda">
-                        <input class="form-control me-2" type="search" placeholder="Busca artículos, boletines..."
+
+                    <!---CUADRO DE BUSQUEDA-->
+                    <form class="d-flex" role="Búsqueda" onsubmit="palabraClave(); return false;">
+                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Palabra Clave"
                             aria-label="Search">
                         <button class="btn btn-outline-success btn-custom" type="submit">Buscar</button>
                     </form>
@@ -62,40 +78,32 @@
     <main>
 
         <!--SLIDER-->
-<!-- Bootstrap JS (Popper.js y Bootstrap JS) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap JS (Popper.js y Bootstrap JS) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="assets/slider 1 v2.png" class="d-block w-100" alt="...">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+
+                <!--ITEMS DEL SLIDER-->
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/slider 1 v2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/slider2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/slider3.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
         </div>
-        <div class="carousel-item">
-            <img src="assets/slider2.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="assets/slider3.png" class="d-block w-100" alt="...">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
 
 
         <br>
@@ -123,7 +131,7 @@
         <hr>
 
 
-        <h2><strong>Conoce Nuestras Fortalezas</strong></h2>
+        <h2 id="fortalezas"><strong>Conoce Nuestras Fortalezas</strong></h2>
 
         <p>Nos enorgullece ofrecer productos/servicios de la más alta calidad. Desde el diseño hasta la entrega,
             mantenemos estándares excepcionales que garantizan la satisfacción del cliente y la excelencia en cada
@@ -190,7 +198,7 @@
 
         <!--APARTADO CON VIDEOS INCLUIDOS-->
         <article>
-            <h2><strong>Logística Nacional</strong></h2>
+            <h2 id="logistica"><strong>Logística Nacional</strong></h2>
             <p>Como una empresa con una presencia extendida a lo largo de todo el país, entendemos la importancia
                 crítica de una cadena de suministro fluida y bien coordinada. Desde la recepción de materias primas
                 hasta la entrega de productos finales, nuestro enfoque logístico está meticulosamente diseñado para
@@ -200,17 +208,17 @@
                     experimentadas.</strong></p>
 
             <!-- VIDEO YOUTUBE EN IFRAME-->
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/ftx_hMpcDCY"
+            <iframe id="servientrga" width="640" height="360" src="https://www.youtube.com/embed/ftx_hMpcDCY"
                 frameborder="5"></iframe><br><br>
 
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/784y5aYJR_Y" frameborder="5"></iframe>
+            <iframe id="tramaco" width="640" height="360" src="https://www.youtube.com/embed/784y5aYJR_Y" frameborder="5"></iframe>
         </article>
 
 
         <br><br><br>
 
         <article class="liviana">
-            <h2><strong>Paquetería Liviana</strong></h2>
+            <h2 id="paqueteria-liviana"><strong>Paquetería Liviana</strong></h2>
             <p>MaxImport ofrece un servicio integral de paquetería liviana que va más allá de
                 simplemente importar mercadería del exterior. Nos destacamos por brindar soluciones logísticas
                 completas, incluyendo envíos tanto dentro como fuera del Ecuador.</p>
@@ -273,7 +281,7 @@
         <br>
         <hr>
         <article>
-            <h2><strong>Compra en las mejores tiendas, te lo llevamos directo a tu puerta</strong></h2>
+            <h2 id="tiendas"><strong>Compra en las mejores tiendas, te lo llevamos directo a tu puerta</strong></h2>
             <p>Visita los catálogos online disponibles, escoge tus productos favoritos y nosotros nos encargamos del
                 resto!</p><br>
             <!--FOTOS DE TIENDAS CON LINKS-->
@@ -314,6 +322,9 @@
 
     </main>
 
+    <!----------------------BOTON VOLVER ARRIBA---------------------->
+    <button id="btnVolverArriba" title="Volver Arriba"><i class="fas fa-arrow-up"></i></button>
+
     <footer>
         <h6 class="siguenos">Síguenos en nuestras redes sociales como @MaxImportEc <i class="fab fa-facebook"
                 style="font-size: 30px; margin-right: 10px; margin-left: 10px;"></i> <i class="fab fa-twitter"
@@ -327,6 +338,7 @@
         <p>Email: ventas@maximport.com.ec</p>
         <p class="copyright">&copy; 2024 MaxImport. Todos los derechos reservados.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
